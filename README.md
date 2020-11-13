@@ -1,9 +1,9 @@
 # DOCUMENTAZIONE-VM
 
 ## PROCESSO DI INSTALLAZIONE
-Installazione di ssh *apt-get install openssh-server*.
-Installazione del webserver *apt-get install apache2*.
-C'è la possibilità di creare più siti sulla stessa macchina aggiungendo file di configurazione in */etc/apache2/sites-avaiable/...*.
+Installazione di ssh *apt-get install openssh-server*.<br>
+Installazione del webserver *apt-get install apache2*.<br>
+C'è la possibilità di creare più siti sulla stessa macchina aggiungendo file di configurazione in */etc/apache2/sites-avaiable/...*.<br>
 Ora bisogna creare un nuovo sito con le configurazioni appena modificate *a2ensite*.
 Modifica dell'indirizzo IP tramite file presente in */etc/netplan/...*.
 Comando *netplan try*.
