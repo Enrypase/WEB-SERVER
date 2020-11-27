@@ -4,7 +4,7 @@
 - **Passo 1** :
 Il primo passo per portare a buon fine la configurazione di un server web è quello di assegnare a esso un IP statico, in modo tale che si possa raggiungere facilmente
 Per fare ciò si utilizzeranno i seguenti comandi:
-< nano /etc/netplan/00-installer-config.yaml **file di esempio presente nella documentazione**
+> nano /etc/netplan/00-installer-config.yaml **file di esempio presente nella documentazione**
 
 
 
