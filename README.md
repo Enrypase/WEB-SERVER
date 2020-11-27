@@ -2,7 +2,12 @@
 
 ## PROCESSO DI INSTALLAZIONE
 - **Passo 1** :
-    
+Il primo passo per portare a buon fine la configurazione di un server web è quello di assegnare a esso un IP statico, in modo tale che si possa raggiungere facilmente
+Per fare ciò si utilizzeranno i seguenti comandi:
+< nano /etc/netplan/00-installer-config.yaml **file di esempio presente nella documentazione**
+
+
+
 Installazione di **ssh** apt-get install openssh-server.<br>
 Installazione del **webserver** *apt-get install apache2*.<br>
 C'è la possibilità di creare **più siti** sulla stessa macchina aggiungendo file di configurazione in */etc/apache2/sites-avaiable/...*. Da modificare sono le opzioni rappresentanti il nome del sito, l'URL per raggiungerlo e la destinazione dei file di log<br>
