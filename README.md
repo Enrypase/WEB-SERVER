@@ -6,7 +6,7 @@
 ### **Passo 1:**
 Il primo passo per portare a buon fine la configurazione di un server web è quello di assegnare a esso un IP statico, in modo tale che si possa raggiungere facilmente;
 
-- **Comandi:** <br>
+- **Comandi:** :computer: <br>
 Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 
 > ***apt-get install net-tools*** <br>
@@ -18,7 +18,7 @@ _File di esempio: [File](https://github.com/Enrypase/WEB-SERVER/blob/main/00-ins
 > ***netplan try*** <br>
 _Questo comando darà anche il relativo esito dell'operazione. Se positivo, verrà chesto di dare l'OK per applicare le modifiche_
 
-- **Checkpoint:** <br>
+- **Checkpoint:** :heavy_exclamation_mark: <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
 
 > ***ifconfig*** <br>
@@ -31,13 +31,13 @@ _Questo comando è preferibile a quello di Ping essendo che i pacchetti ICMP pot
 ### **Passo 2:**
 In questo passo andremo a installare un client che permette l'accesso SSH alla macchina. Così facendo questa sarà raggiungibile da tutte le altre macchine presenti in rete;
 
-- **Comandi:** <br>
+- **Comandi:** :computer: <br>
 Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 
 > ***apt-get install openssh-server*** <br>
 _Una volta fatto questo il servizio dovrebbe già essere attivo e, di conseguenza, la macchina dovrebbe già permettere l'accesso tramite SSH_
 
-- **Checkpoint:** <br>
+- **Checkpoint:** :heavy_exclamation_mark: <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
 
 > ***systemctl status ssh.service*** <br>
@@ -47,13 +47,13 @@ _Questo comando permette la visualizzazione dello stato del processo relativo a 
 ### **Passo 3:**
 In questo passo effetueremo l'installazione di Apache Server;
 
-- **Comandi:** <br>
+- **Comandi:** :computer: <br>
 Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 
 > ***apt-get install apache2*** <br>
 _Con questo comando verrà installato il web-server Apache_
 
-- **Checkpoint:** <br>
+- **Checkpoint:** :heavy_exclamation_mark: <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
 
 > ***systemctl status apache2.service*** <br>
@@ -63,7 +63,7 @@ _Questo comando permette la visualizzazione dello stato del processo relativo ad
 ### **Passo 4:**
 In questo passo installeremo il client FTP in modo tale da permettere tale accesso sulla macchina e, di conseguenza, poter modificare e trasferire files da macchine in rete alla macchina soggetta;
 
-- **Comandi:** <br>
+- **Comandi:** :computer: <br>
 Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 
 > ***apt-get install vsftpd*** <br>
@@ -75,7 +75,7 @@ _File di esempio: [File](https://github.com/Enrypase/WEB-SERVER/blob/main/vsftpd
 > ***systemctl reload vsftpd.service*** <br>
 _Con il comando sopra stante potremo riavviare il servizio, così facendo verranno applicate le impostazioni appena modificate senza dover per forza fare un reboot_
 
-- **Checkpoint:** <br>
+- **Checkpoint:** :heavy_exclamation_mark: <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
 
 > ***systemctl status vsftpd.service*** <br>
@@ -86,7 +86,7 @@ _Questo comando permette la visualizzazione dello stato del processo relativo a 
 **(Opzionale ma fortemente consigliato)** Per l'installazione di un Web-Server è preferibile che ogni utente abbia a disposizione una determinata zona del File-System della macchina.
 Per fare ciò bisogna creare degli utenti i quali possiedono una determinata home (diversa da quella del root) contenente tutti i file dei quali l'utente potrebbe necessitare. In questo caso i file di Log e i vari HTML, CSS, Script, file multimediali eccetera eccetera;
 
-- **Comandi:** <br>
+- **Comandi:** :computer: <br>
 Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 
 > ***useradd -s /bin/bash -d [homeDirectory] -m [nomeUtente]*** <br>
@@ -95,7 +95,7 @@ _Comando che permette la creazione di un utente. Con **-s** diamo a disposizione
 > **passwd [nomeUtente]** <br>
 _Una volta  dato l'invio verrà richiesto all'utente di assegnare una password all'utente inserito. Quindi, è necessario re-inserire la stessa password due volte di seguito accertandosi che siano uguali e corrette_
 
-- **Checkpoint:** <br>
+- **Checkpoint:** :heavy_exclamation_mark: <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
 
 > ***Accesso tramite FTP-Client*** <br>
@@ -107,7 +107,7 @@ Se ci fossero comunque problemi bisogna controllare il file di configurazione di
 ### **Passo 6:**
 Qui finiremo la configurazione del Web-Server andando a configurare Apache;
 
-- **Comandi:** <br>
+- **Comandi:** :computer: <br>
 Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 
 > ***nano /etc/apache2/sites-avaiable/default-ssl.conf*** <br>
@@ -122,7 +122,7 @@ _Con questo comando si abilita il sito_
 _Con questo comando verrà riavviato il servizio di Apache, in modo tale da rendere i cambiamenti effettivi <br>
 Se il riavvio andrà a buon fine non verrà visualizzato alcun messaggio di errore, altrimenti sarà segnalato un problema_
 
-- **Checkpoint:** <br>
+- **Checkpoint:** :heavy_exclamation_mark: <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
 
 > ***journalctl -xe*** <br>
