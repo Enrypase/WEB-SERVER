@@ -94,25 +94,36 @@ _Come per OpenSSH, anche qui possiamo optare tra questo comando e ***netstat***.
 ![Apache2-Verify](ApacheStatus.png "Imagine")
 
 ### **Passo 4:**
-In questo passo installeremo il client FTP in modo tale da permettere tale accesso sulla macchina e, di conseguenza, poter modificare e trasferire files da macchine in rete alla macchina soggetta;
+In questo passo installeremo il client FTP in modo tale da permettere tale accesso sulla macchina e, di conseguenza, poter modificare e trasferire files da macchine in rete alla macchina sulla quale stiamo lavorando;
 
 - **Comandi:** :computer: <br>
 Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 
 > ***apt-get install vsftpd*** <br>
-_Con questo comando verrà installato il client FTP vsftpd_
+:diamonds: Descrizione: <br>
+_Con questo comando verrà installato il client FTP vsftpd sulla macchina._ <br>
+:diamonds: Immagine: <br>
+![VSFTPD-Installation](VsftpdInstallation.png "Imagine")
 
 > ***nano /etc/vsftpd.conf*** <br>
-_File di esempio: [File](https://github.com/Enrypase/WEB-SERVER/blob/main/vsftpd.conf)_
+:diamonds: Descrizione: <br>
+_Con questo comando, invece, andremo ad aprire il file di testo "vsftpd.conf" dove ci sono le varie configurazioni del programma FPT appena installato. Per fare in modo che tutte le operazioni di trasferimento siano possibili e vadano a buon fine è fortemente consigliato copiare il seguente file._ <br>
+:diamonds: File di esempio: [File](https://github.com/Enrypase/WEB-SERVER/blob/main/vsftpd.conf)
 
 > ***systemctl reload vsftpd.service*** <br>
-_Con il comando sopra stante potremo riavviare il servizio, così facendo verranno applicate le impostazioni appena modificate senza dover per forza fare un reboot_
+:diamonds: Descrizione: <br>
+_Questo comando permette di riavviare il servizio FTP, così facendo, applicando le impostazioni appena modificate nel relativo file._ <br>
+:diamonds: Immagine: <br>
+![VSFTPD-Reload](VsftpdReload.png "Imagine")
 
 - **Checkpoint:** :heavy_exclamation_mark: <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
 
 > ***systemctl status vsftpd.service*** <br>
-_Questo comando permette la visualizzazione dello stato del processo relativo a vsftpd (FTP). Altri comandi utili potrebbero essere ***netstat*** oppure ***ps***_
+:diamonds: Descrizione: <br>
+_Come in precedenza è possibile controllare lo stato del servizio anche tramite ***netstat***._ <br>
+:diamonds: Immagine: <br>
+![VSFTPD-Status](VsftpdStatus.png "Imagine")
 
 
 ### **Passo 5:**
@@ -123,18 +134,27 @@ Per fare ciò bisogna creare degli utenti i quali possiedono una determinata hom
 Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 
 > ***useradd -s /bin/bash -d [homeDirectory] -m [nomeUtente]*** <br>
-_Comando che permette la creazione di un utente. Con **-s** diamo a disposizione dell'utente la **bash**; con **-d** diamo all'utente una **home directory**; con **-m** diamo il **nome** dell'utente
+:diamonds: Descrizione: <br>
+_Comando che permette la creazione di un utente. Con **-s** diamo a disposizione dell'utente la **bash**; con **-d** diamo all'utente una **home directory**; con **-m** assegnamo all'utente il relativo **nome**. Da notare che se la directory inserita esiste già non verrà apportata alcuna modifica, mentre se non esiste verrà creata impostando correttamente i vari permessi all'utente relativo._ <br>
+:diamonds: Immagine: <br>
+![Useradd-Command](useradd.png "Imagine")
 
 > **passwd [nomeUtente]** <br>
-_Una volta  dato l'invio verrà richiesto all'utente di assegnare una password all'utente inserito. Quindi, è necessario re-inserire la stessa password due volte di seguito accertandosi che siano uguali e corrette_
+:diamonds: Descrizione: <br>
+_Con questo comando sarà possibile impostare una password all'utente specificato. Per ragioni di sicurezza la password sarà richiesta due volte._ <br>
+:diamonds: Immagine: <br>
+![Passwd-Command](passwd.png "Imagine")
 
 - **Checkpoint:** :heavy_exclamation_mark: <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
 
 > ***Accesso tramite FTP-Client*** <br>
-_Per verificare che l'utente sia stato creato effettivamente si può tentare l'accesso tramite client FTP, nel caso in cui ci fossero dei problemi con dei permessi nel trasferimento, bisogna tornare sulla macchina e digitare ***chown -R [nomeUtente]:[nomeUtente] [directoryCartella]***.
+:diamonds: Descrizione: <br>
+_Per verificare che l'utente sia stato creato effettivamente si può tentare l'accesso tramite client FTP, per esempio Filezilla Client. Nel caso in cui ci fossero dei problemi con dei permessi nel trasferimento, bisogna tornare sulla macchina e digitare ***chown -R [nomeUtente]:[nomeUtente] [directoryCartella]***.
 Se nonostante questo ci fossero comunque dei problemi con dei permessi bisogna eseguire il seguente comando: ***chmod +rwx [directoryCartella]***.
-Se ci fossero comunque problemi bisogna controllare il file di configurazione di vsftpd (FTP)_
+Se ci fossero comunque problemi bisogna controllare il file di configurazione di vsftpd (FTP)._ <br>
+:diamonds: Immagine: <br>
+![FTP-Login](Filezilla.png "Imagine")
 
 
 ### **Passo 6:**
