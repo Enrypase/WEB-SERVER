@@ -158,32 +158,43 @@ Se ci fossero comunque problemi bisogna controllare il file di configurazione di
 
 
 ### **Passo 6:**
-Qui finiremo la configurazione del Web-Server andando a configurare Apache;
+In questo ultimo passo concluderemo la configurazione di Apache impostando la gestione di uno o più siti dalla stessa macchina;
 
 - **Comandi:** :computer: <br>
 Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 
 > ***nano /etc/apache2/sites-avaiable/default-ssl.conf*** <br>
-_File di esempio: [File](https://github.com/Enrypase/WEB-SERVER/blob/main/000-default.conf) <br>
+:diamonds: Descrizione: <br>
 Modificare il file in base alle proprie necessità. Le tre voci principali da modificare sono ***ServerName*** che contiene la URL del sito, ***DocumentRoot*** che contiene la posizione del sito nel FileSystem, ***ErrorLog*** dove deve essere indicata la posizione per i file di log relativi agli errori e ***CustomLog*** dove deve essere indicata la posizione per i file di log relativi agli accessi, richieste e altre operazioni. <br>
-***ATTENZIONE, è preferibile, però, lavorare su un altro file e non direttamente su quello di default_***
+:diamonds: File di esempio: [File](https://github.com/Enrypase/WEB-SERVER/blob/main/000-default.conf) <br>
+***ATTENZIONE, è preferibile lavorare su un altro file e non direttamente su quello di default_***
 
 > ***a2ensite [nomeFile]*** <br>
-_Con questo comando si abilita il sito_
+:diamonds: Descrizione: <br>
+_Con questo comando ordinerà ad Apache di attivare il sito specificato. Prima che sia effettivamente abilitato, però, sarà necessario utilizzare il seguente comando._
+:diamonds: Immagine: <br>
+![A2Ensite-Command](A2Ensite.png "Imagine")
 
 > ***systemctl reload apache2*** <br>
-_Con questo comando verrà riavviato il servizio di Apache, in modo tale da rendere i cambiamenti effettivi <br>
-Se il riavvio andrà a buon fine non verrà visualizzato alcun messaggio di errore, altrimenti sarà segnalato un problema_
+:diamonds: Descrizione: <br>
+_Con questo comando verrà riavviato Apache2 in modo tale che possa rendere effettive le modifiche eseguite._ <br>
+:diamonds: Immagine: <br>
+![SystemctlReload-Command](SystemctlApache2.png "Imagine")
 
 - **Checkpoint:** :heavy_exclamation_mark: <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
 
 > ***journalctl -xe*** <br>
-_Con questo comando sarà possibile vedere i log del sistema che comprendono anche il riavvio di Apache. In caso di problemi, tutti i possibili errori che impediscono l'avvio di Apache verranno segnalati qui_
+:diamonds: Descrizione: <br>
+_Con questo comando sarà possibile vedere i log del sistema che comprendono anche il riavvio di Apache. In caso di problemi, tutti i possibili errori che impediscono l'avvio di Apache verranno segnalati qui._ <br>
+:diamonds: Immagine: <br>
+![SystemctlReload-Command](ExampleJournal.png "Imagine")
 
 > ***Raggiungere la pagina dal browser***
-_Per verificare se il sito è raggiungibile, il modo più semplice e rapido è quello di provare a raggiungerlo da un browser qualsiasi. Se il sito comparirà significa che tutte le operazioni sono andate a buon fine. In caso di errori bisognerà controllare nuovamente i file di configurazione del sito_
-
+:diamonds: Descrizione: <br>
+_Per verificare se il sito è raggiungibile, il modo più semplice e rapido è quello di provare a raggiungerlo da un browser qualsiasi. Se il sito comparirà significa che tutte le operazioni sono andate a buon fine. In caso di errori bisognerà controllare nuovamente i file di configurazione del sito._ <br>
+:diamonds: Immagine: <br>
+![Page](Page.png "Imagine")
 
 ### NOTA: <br>
 *Si consiglia di effettuare tutte le operazioni rispettando l'ordine con le quali sono state esposte* <br>
