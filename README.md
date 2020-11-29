@@ -57,13 +57,19 @@ In questo passo andremo a installare un client che permette l'accesso SSH alla m
 Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 
 > ***apt-get install openssh-server*** <br>
-_Una volta fatto questo il servizio dovrebbe già essere attivo e, di conseguenza, la macchina dovrebbe già permettere l'accesso tramite SSH_
+:diamonds: Descrizione: <br>
+_Questo comando permette di installare un servizio SSH server e, di conseguenza, rende la macchina raggiungibile da altre in rete e utilizzabile da esse tramite shell._ <br>
+:diamonds: Immagine: <br>
+![OpenSSH-Installation](OpenSSH.png "Imagine")
 
 - **Checkpoint:** :heavy_exclamation_mark: <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
 
 > ***systemctl status ssh.service*** <br>
-_Questo comando permette la visualizzazione dello stato del processo relativo a SSH. Altri comandi utili potrebbero essere ***netstat*** oppure ***ps***_
+:diamonds: Descrizione: <br>
+_Questo comando permette la visualizzazione dello stato del processo relativo a SSH. Un altro comando per verificare la presenza del servizio SSh è ***netstat***. Se in uno di questi due comandi risulta un processo in ascolto sulla porta SSH (Porta 22), significa che l'installazione del programma è andata a buon fine._ <br>
+:diamonds: Immagine: <br>
+![OpenSSH-Installation](OpenSSH.png "Imagine")
 
 
 ### **Passo 3:**
