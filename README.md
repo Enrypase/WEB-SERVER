@@ -69,24 +69,29 @@ I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sop
 :diamonds: Descrizione: <br>
 _Questo comando permette la visualizzazione dello stato del processo relativo a SSH. Un altro comando per verificare la presenza del servizio SSh è ***netstat***. Se in uno di questi due comandi risulta un processo in ascolto sulla porta SSH (Porta 22), significa che l'installazione del programma è andata a buon fine._ <br>
 :diamonds: Immagine: <br>
-![OpenSSH-Installation](SSHStatus.png "Imagine")
+![OpenSSH-Verify](SSHStatus.png "Imagine")
 
 
 ### **Passo 3:**
-In questo passo effetueremo l'installazione di Apache Server;
+In questo passo effetueremo l'installazione di Apache Server, in modo tale da rendere possibile alla macchina rendere il servizio di Web-Server;
 
 - **Comandi:** :computer: <br>
 Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 
 > ***apt-get install apache2*** <br>
-_Con questo comando verrà installato il web-server Apache_
+:diamonds: Descrizione: <br>
+_Con questo comando verrà installato il Web-Server Apache._ <br>
+:diamonds: Immagine: <br>
+![Apache2-Installation](ApacheInstallation.png "Imagine")
 
 - **Checkpoint:** :heavy_exclamation_mark: <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
 
 > ***systemctl status apache2.service*** <br>
-_Questo comando permette la visualizzazione dello stato del processo relativo ad Apache (Web-Server). Altri comandi utili potrebbero essere ***netstat*** oppure ***ps***_
-
+:diamonds: Descrizione: <br>
+_Come per OpenSSH, anche qui possiamo optare tra questo comando e ***netstat***._ <br>
+:diamonds: Immagine: <br>
+![Apache2-Verify](ApacheStatus.png "Imagine")
 
 ### **Passo 4:**
 In questo passo installeremo il client FTP in modo tale da permettere tale accesso sulla macchina e, di conseguenza, poter modificare e trasferire files da macchine in rete alla macchina soggetta;
