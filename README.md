@@ -1,16 +1,28 @@
+
+<!-- Il documento è suddiviso in Passi;
+In ogni passo c'è la sezione Comandi e la sezione Checkpoint;
+Ognuna di queste sezioni contiene tutti i comandi necessari a portare a termine l'obiettivo del determinato passo, se nella sezione Comandi, oppure a controllare l'operato, se nella sezione Checkpoint;
+In ogni comando è contenuta una descrizione di esso, se non riguarda un file, l'immagine dell'invio del comando con il relativo output dalla macchina, altrimenti è presente un link al file del quale si sta parlando.
+
+Enjoy!! -->
+
 # DOCUMENTAZIONE WEB-SERVER
 
 ## PROCESSO DI INSTALLAZIONE
 
 
 ### **Passo 1:**
-Il primo passo per portare a buon fine la configurazione di un server web è quello di assegnare a esso un IP statico, in modo tale che si possa raggiungere facilmente;
+Il primo passo per configurare un server web è quello di assegnare a esso un IP statico, in modo tale che si possa raggiungere agevolmente e sempre con lo stesso indirizzo la determinata macchina;
 
 - **Comandi:** :computer: <br>
 Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 
 > ***apt-get install net-tools*** <br>
+Descrizione: <br>
 _Questo comando permetterà l'installazione di tools utili per la verifica dello stato del network_
+Immagine: <br>
+
+![NetTools-Installation](NetTools.png "A cute kitten")
 
 > ***nano /etc/netplan/00-installer-config.yaml*** <br>
 _File di esempio: [File](https://github.com/Enrypase/WEB-SERVER/blob/main/00-installer-config.yaml)_
