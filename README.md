@@ -190,7 +190,7 @@ _Con questo comando sarà possibile vedere i log del sistema che comprendono anc
 :diamonds: Immagine: <br>
 ![SystemctlReload-Command](ExampleJournal.png "Imagine")
 
-> ***Raggiungere la pagina dal browser***
+> ***Raggiungere la pagina dal browser*** <br>
 :diamonds: Descrizione: <br>
 _Per verificare se il sito è raggiungibile, il modo più semplice e rapido è quello di provare a raggiungerlo da un browser qualsiasi. Se il sito comparirà significa che tutte le operazioni sono andate a buon fine. In caso di errori bisognerà controllare nuovamente i file di configurazione del sito._ <br>
 :diamonds: Immagine: <br>
