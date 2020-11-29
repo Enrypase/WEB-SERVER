@@ -69,7 +69,7 @@ I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sop
 :diamonds: Descrizione: <br>
 _Questo comando permette la visualizzazione dello stato del processo relativo a SSH. Un altro comando per verificare la presenza del servizio SSh è ***netstat***. Se in uno di questi due comandi risulta un processo in ascolto sulla porta SSH (Porta 22), significa che l'installazione del programma è andata a buon fine._ <br>
 :diamonds: Immagine: <br>
-![OpenSSH-Installation](OpenSSH.png "Imagine")
+![OpenSSH-Installation](SSHStatus.png "Imagine")
 
 
 ### **Passo 3:**
