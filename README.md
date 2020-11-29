@@ -18,26 +18,36 @@ Il primo passo per configurare un server web è quello di assegnare a esso un IP
 Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 
 > ***apt-get install net-tools*** <br>
-Descrizione: <br>
-_Questo comando permetterà l'installazione di tools utili per la verifica dello stato del network_
-Immagine: <br>
-
-![NetTools-Installation](NetTools.png "A cute kitten")
+:diamonds: Descrizione: <br>
+_Questo comando permetterà l'installazione di tools utili per la verifica dello stato del network e delle varie interfacce di rete._ <br>
+:diamonds: Immagine: <br>
+![NetTools-Installation](NetTools.png "Imagine")
 
 > ***nano /etc/netplan/00-installer-config.yaml*** <br>
-_File di esempio: [File](https://github.com/Enrypase/WEB-SERVER/blob/main/00-installer-config.yaml)_
+:diamonds: Descrizione: <br>
+_Con questo comando, invece, andremo ad aprire il file di testo "00-installer-config.yaml" dove ci sono le varie configurazioni di rete della macchina._ <br>
+:diamonds: File di esempio: [File](https://github.com/Enrypase/WEB-SERVER/blob/main/00-installer-config.yaml)
 
 > ***netplan try*** <br>
-_Questo comando darà anche il relativo esito dell'operazione. Se positivo, verrà chesto di dare l'OK per applicare le modifiche_
+:diamonds: Descrizione: <br>
+_Questo comando, più avanzato rispetto a ***netplan apply*** permette di verificare la correttezza semantica del file modificato in precendeza. Se tutto dovesse risultare corretto sarà possibile applicare le modifiche premendo invio._ <br>
+:diamonds: Immagine: <br>
+![NetplanTry-Command](NetplanTry.png "Imagine")
 
 - **Checkpoint:** :heavy_exclamation_mark: <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
 
 > ***ifconfig*** <br>
-_Con questo comando verranno visualizzate tutte le interfacce di rete. Basterà quindi verificare che quella interessata abbia l'indirizzo IP inserito in precedenza per vedere se le impostazioni sono state applicate correttamente e definitivamente. Potremmo utilizzare anche il comando **ip addr**_
+:diamonds: Descrizione: <br>
+_Con questo comando verranno visualizzate tutte le interfacce di rete. Basterà quindi verificare che quella interessata abbia l'indirizzo IP inserito in precedenza per vedere se le impostazioni sono state applicate correttamente e definitivamente. Potremmo utilizzare anche il comando **ip addr**._ <br>
+:diamonds: Immagine: <br>
+![IfConfig-Command](IfConfig.png "Imagine")
 
 > ***wget www.google.com*** <br>
-_Questo comando è preferibile a quello di Ping essendo che i pacchetti ICMP potrebbero essere scartati da certi router, mentre quelli FTP no. Se la richiesta del sito (in questo caso Google) va a buon fine, significa che l'indirizzo statico sopra-inserito ci permette di navigare in internet_
+:diamonds: Descrizione: <br>
+_Questo comando è preferibile a ***ping [indirizzo]*** essendo che i pacchetti di quest'ultimo potrebbero essere scartati dai router, mentre quelli FTP inviati tramite wget no. Se la richiesta del sito (in questo caso Google) va a buon fine, significa che l'indirizzo inserito nei file di configurazione è compatibile con la nostra rete e permette la navigazione nel World Wide Web._ <br>
+:diamonds: Immagine: <br>
+![WGet-Command](WGet.png "Imagine")
 
 
 ### **Passo 2:**
