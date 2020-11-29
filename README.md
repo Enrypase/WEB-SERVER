@@ -134,6 +134,3 @@ _Per verificare se il sito è raggiungibile, il modo più semplice e rapido è q
 
 ### NOTA: <br>
 *Si consiglia di effettuare tutte le operazioni rispettando l'ordine con le quali sono state esposte* <br>
-
-
-# AGGIUNGERE COMANDI NEI RIQUADRI, ESEMPI DI RISULTATO E FILE DI CONFIGURAZIONE (presenti sul pc in etc e var (desktop))
