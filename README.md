@@ -110,25 +110,30 @@ Qui finiremo la configurazione del Web-Server andando a configurare Apache;
 - **Comandi:** <br>
 Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 
-> ***nano /etc/apache2/sites-avaiable/***
+> ***nano /etc/apache2/sites-avaiable/default-ssl.conf*** <br>
+_File di esempio: [File](https://github.com/Enrypase/WEB-SERVER/blob/main/000-default.conf) <br>
+Modificare il file in base alle proprie necessità. Le tre voci principali da modificare sono ***ServerName*** che contiene la URL del sito, ***DocumentRoot*** che contiene la posizione del sito nel FileSystem, ***ErrorLog*** dove deve essere indicata la posizione per i file di log relativi agli errori e ***CustomLog*** dove deve essere indicata la posizione per i file di log relativi agli accessi, richieste e altre operazioni. <br>
+***ATTENZIONE, è preferibile, però, lavorare su un altro file e non direttamente su quello di default_***
+
+> ***a2ensite [nomeFile]*** <br>
+_Con questo comando si abilita il sito_
+
+> ***systemctl reload apache2*** <br>
+_Con questo comando verrà riavviato il servizio di Apache, in modo tale da rendere i cambiamenti effettivi <br>
+Se il riavvio andrà a buon fine non verrà visualizzato alcun messaggio di errore, altrimenti sarà segnalato un problema_
 
 - **Checkpoint:** <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
 
+> ***journalctl -xe*** <br>
+_Con questo comando sarà possibile vedere i log del sistema che comprendono anche il riavvio di Apache. In caso di problemi, tutti i possibili errori che impediscono l'avvio di Apache verranno segnalati qui_
 
-C'è la possibilità di creare **più siti** sulla stessa macchina aggiungendo file di configurazione in */etc/apache2/sites-avaiable/...*. Da modificare sono le opzioni rappresentanti il nome del sito, l'URL per raggiungerlo e la destinazione dei file di log<br>
-Ora bisogna **creare un nuovo sito con le configurazioni appena modificate** *a2ensite*.<br>
+> ***Raggiungere la pagina dal browser***
+_Per verificare se il sito è raggiungibile, il modo più semplice e rapido è quello di provare a raggiungerlo da un browser qualsiasi. Se il sito comparirà significa che tutte le operazioni sono andate a buon fine. In caso di errori bisognerà controllare nuovamente i file di configurazione del sito_
+
 
 ### NOTA: <br>
-è fortemente consigliato creare prima l'utente con il comando sopra specificato, della directory, in modo tale che i vari permessi siano già settati in automatico. Altrimenti, dobbiamo eseguire i seguenti comando: *chown -R nomeUtente:nomeUtente directoryCartella* e *chmod +rwx directoryCartella* <br>
+*Si consiglia di effettuare tutte le operazioni rispettando l'ordine con le quali sono state esposte* <br>
 
-## PROCESSO DI CONFERMA
-- Si può verificare l'effettiva installazione di openssh provando a connettersi tramite "PuTTy" o da altre shell ssh.<br>
-- Si può, inoltre, verificare quella di apache inserendo l'indirizzo IP della macchina virtuale nel browser e visualizzare la pagina default di apache in risposta.<br>
-- Allo stesso modo, una volta creati i diversi siti tramite apache, basterà inserire il loro indirizzo nel browser per verificarne l'effettiva visualizzazione.<br>
-- Si può, invece, verificare l'effettiva applicazione dell'indirizzo IP tramite i comandi ifconfig o ip addr.<br>
-- Ora, si può verificare se la macchina è raggiungibile tramite comando *ping*.<br>
-- Una volta modificato il file di configurazione per FTP si può verificare l'effettiva funzionalità provando a connettersi tramite *filezilla* o altri programmi che supportano FTP alla macchina virtuale.<br>
-- Si prova prima di tutto la connessione, per vedere se è possibile accedere alla macchina, in seguito bisogna provare a passare un file dalla macchina virtuale al pc e, infine, dal pc alla macchina virtuale. Se tutti questi passaggi vanno a buon fine, possiamo dire di aver installato il client FPT con successo. <br>
 
 # AGGIUNGERE COMANDI NEI RIQUADRI, ESEMPI DI RISULTATO E FILE DI CONFIGURAZIONE (presenti sul pc in etc e var (desktop))
