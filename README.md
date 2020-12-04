@@ -26,7 +26,7 @@ _Questo comando permetterà l'installazione di tools utili per la verifica dello
 > ***nano /etc/netplan/00-installer-config.yaml*** <br>
 :diamonds: Descrizione: <br>
 _Con questo comando, invece, andremo ad aprire il file di testo "00-installer-config.yaml" dove ci sono le varie configurazioni di rete della macchina._ <br>
-:diamonds: File di esempio: [File](https://github.com/Enrypase/WEB-SERVER/blob/main/00-installer-config.yaml)
+:diamonds: File di esempio: [File](https://github.com/Enrypase/WEB-SERVER/blob/main/Files/00-installer-config.yaml)
 
 > ***netplan try*** <br>
 :diamonds: Descrizione: <br>
@@ -108,7 +108,7 @@ _Con questo comando verrà installato il client FTP vsftpd sulla macchina._ <br>
 > ***nano /etc/vsftpd.conf*** <br>
 :diamonds: Descrizione: <br>
 _Con questo comando, invece, andremo ad aprire il file di testo "vsftpd.conf" dove ci sono le varie configurazioni del programma FPT appena installato. Per fare in modo che tutte le operazioni di trasferimento siano possibili e vadano a buon fine è fortemente consigliato copiare il seguente file._ <br>
-:diamonds: File di esempio: [File](https://github.com/Enrypase/WEB-SERVER/blob/main/vsftpd.conf)
+:diamonds: File di esempio: [File](https://github.com/Enrypase/WEB-SERVER/blob/main/Files/vsftpd.conf)
 
 > ***systemctl reload vsftpd.service*** <br>
 :diamonds: Descrizione: <br>
@@ -166,7 +166,7 @@ Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 > ***nano /etc/apache2/sites-avaiable/default-ssl.conf*** <br>
 :diamonds: Descrizione: <br>
 Modificare il file in base alle proprie necessità. Le tre voci principali da modificare sono ***ServerName*** che contiene la URL del sito, ***DocumentRoot*** che contiene la posizione del sito nel FileSystem, ***ErrorLog*** dove deve essere indicata la posizione per i file di log relativi agli errori e ***CustomLog*** dove deve essere indicata la posizione per i file di log relativi agli accessi, richieste e altre operazioni. <br>
-:diamonds: File di esempio: [File](https://github.com/Enrypase/WEB-SERVER/blob/main/000-default.conf) <br>
+:diamonds: File di esempio: [File](https://github.com/Enrypase/WEB-SERVER/blob/main/Files/000-default.conf) <br>
 ***ATTENZIONE, è preferibile lavorare su un altro file e non direttamente su quello di default_***
 
 > ***a2ensite [nomeFile]*** <br>
