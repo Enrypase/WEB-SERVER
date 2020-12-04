@@ -167,7 +167,7 @@ Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 :diamonds: Descrizione: <br>
 Modificare il file in base alle proprie necessità. Le tre voci principali da modificare sono ***ServerName*** che contiene la URL del sito, ***DocumentRoot*** che contiene la posizione del sito nel FileSystem, ***ErrorLog*** dove deve essere indicata la posizione per i file di log relativi agli errori e ***CustomLog*** dove deve essere indicata la posizione per i file di log relativi agli accessi, richieste e altre operazioni. <br>
 :diamonds: File di esempio: [File](https://github.com/Enrypase/WEB-SERVER/blob/main/Files/000-default.conf) <br>
-***ATTENZIONE, è preferibile lavorare su un altro file e non direttamente su quello di default_***
+***_ATTENZIONE, è preferibile lavorare su un altro file e non direttamente su quello di default_***
 
 > ***a2ensite [nomeFile]*** <br>
 :diamonds: Descrizione: <br>
