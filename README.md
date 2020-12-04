@@ -21,7 +21,7 @@ Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 :diamonds: Descrizione: <br>
 _Questo comando permetterà l'installazione di tools utili per la verifica dello stato del network e delle varie interfacce di rete._ <br>
 :diamonds: Immagine: <br>
-![NetTools-Installation](NetTools.png "Imagine")
+![NetTools-Installation](/Immagini/NetTools.png "Imagine")
 
 > ***nano /etc/netplan/00-installer-config.yaml*** <br>
 :diamonds: Descrizione: <br>
@@ -32,7 +32,7 @@ _Con questo comando, invece, andremo ad aprire il file di testo "00-installer-co
 :diamonds: Descrizione: <br>
 _Questo comando, più avanzato rispetto a ***netplan apply*** permette di verificare la correttezza semantica del file modificato in precendeza. Se tutto dovesse risultare corretto sarà possibile applicare le modifiche premendo invio._ <br>
 :diamonds: Immagine: <br>
-![NetplanTry-Command](NetplanTry.png "Imagine")
+![NetplanTry-Command](/Immagini/NetplanTry.png "Imagine")
 
 - **Checkpoint:** :heavy_exclamation_mark: <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
@@ -41,13 +41,13 @@ I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sop
 :diamonds: Descrizione: <br>
 _Con questo comando verranno visualizzate tutte le interfacce di rete. Basterà quindi verificare che quella interessata abbia l'indirizzo IP inserito in precedenza per vedere se le impostazioni sono state applicate correttamente e definitivamente. Potremmo utilizzare anche il comando **ip addr**._ <br>
 :diamonds: Immagine: <br>
-![IfConfig-Command](IfConfig.png "Imagine")
+![IfConfig-Command](/Immagini/IfConfig.png "Imagine")
 
 > ***wget www.google.com*** <br>
 :diamonds: Descrizione: <br>
 _Questo comando è preferibile a ***ping [indirizzo]*** essendo che i pacchetti di quest'ultimo potrebbero essere scartati dai router, mentre quelli FTP inviati tramite wget no. Se la richiesta del sito (in questo caso Google) va a buon fine, significa che l'indirizzo inserito nei file di configurazione è compatibile con la nostra rete e permette la navigazione nel World Wide Web._ <br>
 :diamonds: Immagine: <br>
-![WGet-Command](WGet.png "Imagine")
+![WGet-Command](/Immagini/WGet.png "Imagine")
 
 
 ### **Passo 2:**
@@ -60,7 +60,7 @@ Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 :diamonds: Descrizione: <br>
 _Questo comando permette di installare un servizio SSH server e, di conseguenza, rende la macchina raggiungibile da altre in rete e utilizzabile da esse tramite shell._ <br>
 :diamonds: Immagine: <br>
-![OpenSSH-Installation](OpenSSH.png "Imagine")
+![OpenSSH-Installation](/Immagini/OpenSSH.png "Imagine")
 
 - **Checkpoint:** :heavy_exclamation_mark: <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
@@ -69,7 +69,7 @@ I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sop
 :diamonds: Descrizione: <br>
 _Questo comando permette la visualizzazione dello stato del processo relativo a SSH. Un altro comando per verificare la presenza del servizio SSh è ***netstat***. Se in uno di questi due comandi risulta un processo in ascolto sulla porta SSH (Porta 22), significa che l'installazione del programma è andata a buon fine._ <br>
 :diamonds: Immagine: <br>
-![OpenSSH-Verify](SSHStatus.png "Imagine")
+![OpenSSH-Verify](/Immagini/SSHStatus.png "Imagine")
 
 
 ### **Passo 3:**
@@ -82,7 +82,7 @@ Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 :diamonds: Descrizione: <br>
 _Con questo comando verrà installato il Web-Server Apache._ <br>
 :diamonds: Immagine: <br>
-![Apache2-Installation](ApacheInstallation.png "Imagine")
+![Apache2-Installation](/Immagini/ApacheInstallation.png "Imagine")
 
 - **Checkpoint:** :heavy_exclamation_mark: <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
@@ -91,7 +91,7 @@ I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sop
 :diamonds: Descrizione: <br>
 _Come per OpenSSH, anche qui possiamo optare tra questo comando e ***netstat***._ <br>
 :diamonds: Immagine: <br>
-![Apache2-Verify](ApacheStatus.png "Imagine")
+![Apache2-Verify](/Immagini/ApacheStatus.png "Imagine")
 
 ### **Passo 4:**
 In questo passo installeremo il client FTP in modo tale da permettere tale accesso sulla macchina e, di conseguenza, poter modificare e trasferire files da macchine in rete alla macchina sulla quale stiamo lavorando;
@@ -103,7 +103,7 @@ Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 :diamonds: Descrizione: <br>
 _Con questo comando verrà installato il client FTP vsftpd sulla macchina._ <br>
 :diamonds: Immagine: <br>
-![VSFTPD-Installation](VsftpdInstallation.png "Imagine")
+![VSFTPD-Installation](/Immagini/VsftpdInstallation.png "Imagine")
 
 > ***nano /etc/vsftpd.conf*** <br>
 :diamonds: Descrizione: <br>
@@ -114,7 +114,7 @@ _Con questo comando, invece, andremo ad aprire il file di testo "vsftpd.conf" do
 :diamonds: Descrizione: <br>
 _Questo comando permette di riavviare il servizio FTP, così facendo, applicando le impostazioni appena modificate nel relativo file._ <br>
 :diamonds: Immagine: <br>
-![VSFTPD-Reload](VsftpdReload.png "Imagine")
+![VSFTPD-Reload](/Immagini/VsftpdReload.png "Imagine")
 
 - **Checkpoint:** :heavy_exclamation_mark: <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
@@ -123,7 +123,7 @@ I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sop
 :diamonds: Descrizione: <br>
 _Come in precedenza è possibile controllare lo stato del servizio anche tramite ***netstat***._ <br>
 :diamonds: Immagine: <br>
-![VSFTPD-Status](VsftpdStatus.png "Imagine")
+![VSFTPD-Status](/Immagini/VsftpdStatus.png "Imagine")
 
 
 ### **Passo 5:**
@@ -137,13 +137,13 @@ Per l'eseguzione dei seguenti comandi è necessario che l'utente sia **root**.
 :diamonds: Descrizione: <br>
 _Comando che permette la creazione di un utente. Con **-s** diamo a disposizione dell'utente la **bash**; con **-d** diamo all'utente una **home directory**; con **-m** assegnamo all'utente il relativo **nome**. Da notare che se la directory inserita esiste già non verrà apportata alcuna modifica, mentre se non esiste verrà creata impostando correttamente i vari permessi all'utente relativo._ <br>
 :diamonds: Immagine: <br>
-![Useradd-Command](useradd.png "Imagine")
+![Useradd-Command](/Immagini/useradd.png "Imagine")
 
 > **passwd [nomeUtente]** <br>
 :diamonds: Descrizione: <br>
 _Con questo comando sarà possibile impostare una password all'utente specificato. Per ragioni di sicurezza la password sarà richiesta due volte._ <br>
 :diamonds: Immagine: <br>
-![Passwd-Command](passwd.png "Imagine")
+![Passwd-Command](/Immagini/passwd.png "Imagine")
 
 - **Checkpoint:** :heavy_exclamation_mark: <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
@@ -154,7 +154,7 @@ _Per verificare che l'utente sia stato creato effettivamente si può tentare l'a
 Se nonostante questo ci fossero comunque dei problemi con dei permessi bisogna eseguire il seguente comando: ***chmod +rwx [directoryCartella]***.
 Se ci fossero comunque problemi bisogna controllare il file di configurazione di vsftpd (FTP)._ <br>
 :diamonds: Immagine: <br>
-![FTP-Login](Filezilla.png "Imagine")
+![FTP-Login](/Immagini/Filezilla.png "Imagine")
 
 
 ### **Passo 6:**
@@ -173,13 +173,13 @@ Modificare il file in base alle proprie necessità. Le tre voci principali da mo
 :diamonds: Descrizione: <br>
 _Con questo comando ordinerà ad Apache di attivare il sito specificato. Prima che sia effettivamente abilitato, però, sarà necessario utilizzare il seguente comando._
 :diamonds: Immagine: <br>
-![A2Ensite-Command](A2Ensite.png "Imagine")
+![A2Ensite-Command](/Immagini/A2Ensite.png "Imagine")
 
 > ***systemctl reload apache2*** <br>
 :diamonds: Descrizione: <br>
 _Con questo comando verrà riavviato Apache2 in modo tale che possa rendere effettive le modifiche eseguite._ <br>
 :diamonds: Immagine: <br>
-![SystemctlReload-Command](SystemctlApache2.png "Imagine")
+![SystemctlReload-Command](/Immagini/SystemctlApache2.png "Imagine")
 
 - **Checkpoint:** :heavy_exclamation_mark: <br>
 I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sopra eseguiti.
@@ -188,13 +188,13 @@ I seguenti passi saranno utili per confermare l'effettivo esito dei passaggi sop
 :diamonds: Descrizione: <br>
 _Con questo comando sarà possibile vedere i log del sistema che comprendono anche il riavvio di Apache. In caso di problemi, tutti i possibili errori che impediscono l'avvio di Apache verranno segnalati qui._ <br>
 :diamonds: Immagine: <br>
-![SystemctlReload-Command](ExampleJournal.png "Imagine")
+![SystemctlReload-Command](/Immagini/ExampleJournal.png "Imagine")
 
 > ***Raggiungere la pagina dal browser*** <br>
 :diamonds: Descrizione: <br>
 _Per verificare se il sito è raggiungibile, il modo più semplice e rapido è quello di provare a raggiungerlo da un browser qualsiasi. Se il sito comparirà significa che tutte le operazioni sono andate a buon fine. In caso di errori bisognerà controllare nuovamente i file di configurazione del sito._ <br>
 :diamonds: Immagine: <br>
-![Page](Page.png "Imagine")
+![Page](/Immagini/Page.png "Imagine")
 
 ### NOTA: <br>
 *Si consiglia di effettuare tutte le operazioni rispettando l'ordine con le quali sono state esposte* <br>
